@@ -5,22 +5,33 @@
 
 ## app.jetus 
 ```jetus
-import ssk <# STANDARD STYLE KIT IMPORT #>
-import clock 
+load ssk; <# STANDARD STYLE KIT IMPORT #>
+load clock;
+load io;
+load os;
 
 @start()
 {
     $(~*, MyApplication) as app
     {
-        app >> start()
+        app >> start();
     }
+
+    string appdata_directory = (os >> key['%appdata%']).str();
+    io >> mkdir(wc'{appdata_directory}\\.app');
+    app_data_folder = wc'{appdata_directory}\\.app' + "\\data" ;
+}
+
+fx changeBackgroundColor(window(Component), toColor(hex))
+{
+    window >> background = toColor;
 }
 
 @frame()
 {
     $(~*, MyApplication) as app
     {
-        app >> meta >> create("ticker", clock >> ticker )
+        app >> meta >> create("ticker", clock >> ticker );
     }
 }
 
