@@ -16,7 +16,7 @@ import clock
     }
 }
 
-@update()
+@frame()
 {
     $(~*, MyApplication) as app
     {
