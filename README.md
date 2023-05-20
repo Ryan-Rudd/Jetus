@@ -19,7 +19,7 @@ load os;
 
     string appdata_directory = (os >> key['%appdata%']).str();
     io >> mkdir(wc'{appdata_directory}\\.app');
-    app_data_folder = wc'{appdata_directory}\\.app' + "\\data" ;
+    string app_data_folder = wc'{appdata_directory}\\.app' + "\\data" ;
 }
 
 fx changeBackgroundColor(window(Component), toColor(hex))
