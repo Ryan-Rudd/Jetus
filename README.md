@@ -6,12 +6,29 @@
 ## app.jetus 
 ```jetus
 import ssk <# STANDARD STYLE KIT IMPORT #>
+import clock 
+
+@start()
+{
+    $(~*, MyApplication) as app
+    {
+        app >> start()
+    }
+}
+
+@update()
+{
+    $(~*, MyApplication) as app
+    {
+        app >> meta >> create("ticker", clock >> ticker )
+    }
+}
 
 $(~*, ClickButton)
 {
     fx onClick()
     {
-        $(~id, welcome-label).text = "Button Clicked"
+        $(~id, welcome-label) >> text = "Button Clicked";
     }
 }
 $(~id, welcome-label) {
