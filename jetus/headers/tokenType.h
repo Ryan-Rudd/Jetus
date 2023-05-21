@@ -2,26 +2,26 @@
 #define TOKEN_TYPES_H
 
 enum TokenType {
-    LOAD,
-    START,
-    TILDE,
-    AS,
-    L_PAREN,
-    R_PAREN,
-    L_BRACE,
-    R_BRACE,
-    STRING,
-    EQUALS,
-    SEMICOLON,
-    COMMA,
-    ARROW,
-    DOT,
-    COLON,
-    IDENTIFIER,
-    KEYWORD,
-    OPERATOR,
-    COMMENT,
-    END_OF_FILE
+    LOAD,              // 'load' keyword
+    START,             // 'start' keyword
+    TILDE,             // '~' character
+    AS,                // 'as' keyword
+    L_PAREN,           // '(' character
+    R_PAREN,           // ')' character
+    L_BRACE,           // '{' character
+    R_BRACE,           // '}' character
+    STRING,            // string literal
+    EQUALS,            // '=' character
+    SEMICOLON,         // ';' character
+    COMMA,             // ',' character
+    ARROW,             // '>>' token
+    DOT,               // '.' character
+    COLON,             // ':' character
+    IDENTIFIER,        // identifier (variable/function name)
+    KEYWORD,           // other keywords (e.g., 'clock', 'io', 'os')
+    OPERATOR,          // operators (e.g., '+', '-', '*', '/')
+    COMMENT,           // comment
+    END_OF_FILE        // end of file marker
 };
 
 #endif  // TOKEN_TYPES_H
